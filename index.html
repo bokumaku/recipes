@@ -1,1 +1,35 @@
-aaab
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>季節の料理レシピ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>季節の料理レシピ</h1>
+    </header>
+    <main id="recipe-container">
+        <div class="recipe" id="main-dish">
+            <h2>メイン料理</h2>
+            <img src="" alt="メイン料理画像" class="recipe-image">
+            <p class="recipe-name"></p>
+            <button onclick="changeRecipe('main-dish')">変更</button>
+        </div>
+        <div class="recipe" id="side-dish">
+            <h2>サイド料理</h2>
+            <img src="" alt="サイド料理画像" class="recipe-image">
+            <p class="recipe-name"></p>
+            <button onclick="changeRecipe('side-dish')">変更</button>
+        </div>
+        <div class="recipe" id="soup-dish">
+            <h2>スープ</h2>
+            <img src="" alt="スープ画像" class="recipe-image">
+            <p class="recipe-name"></p>
+            <button onclick="changeRecipe('soup-dish')">変更</button>
+        </div>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
