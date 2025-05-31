@@ -13,12 +13,20 @@ fetch('recipes.json')
 
     for (const genre in grouped) {
       const genreLi = document.createElement('li');
-      const genreTitle = document.createElement('div');
-      genreTitle.innerHTML = `<strong>${genre}</strong>`;
-      genreTitle.className = 'genre-title';
+      const genreButton = document.createElement('button');
+      genreButton.className = 'genre-toggle';
+      genreButton.setAttribute('aria-expanded', 'false');
+      genreButton.innerText = genre;
 
       const subList = document.createElement('ul');
       subList.className = 'genre-list';
+      subList.style.display = 'none';
+
+      genreButton.addEventListener('click', () => {
+        const expanded = genreButton.getAttribute('aria-expanded') === 'true';
+        genreButton.setAttribute('aria-expanded', String(!expanded));
+        subList.style.display = expanded ? 'none' : 'flex';
+      });
 
       grouped[genre].forEach(recipe => {
         const item = document.createElement('li');
@@ -39,7 +47,7 @@ fetch('recipes.json')
         main.appendChild(section);
       });
 
-      genreLi.appendChild(genreTitle);
+      genreLi.appendChild(genreButton);
       genreLi.appendChild(subList);
       toc.appendChild(genreLi);
     }
