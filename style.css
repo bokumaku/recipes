@@ -58,28 +58,41 @@ footer {
 }
 
 nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  list-style: none;
+  padding-left: 0;
 }
 
-nav li {
+nav .genre-title {
+  font-size: 1.2rem;
+  margin: 1rem 0 0.5rem;
+  color: #d2691e;
+}
+
+nav .genre-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-left: 0;
+}
+
+nav .genre-list li {
   list-style: none;
 }
 
-nav li > a, nav li > strong {
-  display: block;
-  padding: 0.5rem 1rem;
+nav .genre-list a {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
   background-color: #fff;
   border: 1px solid #ffa07a;
   border-radius: 12px;
   text-decoration: none;
   color: #333;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
-nav li > a:hover {
+nav .genre-list a:hover {
   background-color: #ffa07a;
   color: white;
 }
