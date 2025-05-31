@@ -62,10 +62,18 @@ nav ul {
   padding-left: 0;
 }
 
-nav .genre-title {
-  font-size: 1.2rem;
-  margin: 1rem 0 0.5rem;
-  color: #d2691e;
+.genre-toggle {
+  background-color: #f4a460;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
 }
 
 nav .genre-list {
