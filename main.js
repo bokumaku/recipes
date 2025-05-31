@@ -12,14 +12,14 @@ fetch('recipes.json')
     });
 
     for (const genre in grouped) {
-      const genreItem = document.createElement('li');
-      genreItem.innerHTML = `<strong>${genre}</strong><ul></ul>`;
-      const innerUl = genreItem.querySelector('ul');
+      const genreTitle = document.createElement('li');
+      genreTitle.innerHTML = `<strong>${genre}</strong>`;
+      toc.appendChild(genreTitle);
 
       grouped[genre].forEach(recipe => {
         const linkItem = document.createElement('li');
         linkItem.innerHTML = `<a href="#${recipe.id}">${recipe.title}</a>`;
-        innerUl.appendChild(linkItem);
+        toc.appendChild(linkItem);
 
         const section = document.createElement('section');
         section.className = 'recipe';
@@ -34,7 +34,5 @@ fetch('recipes.json')
         `;
         main.appendChild(section);
       });
-
-      toc.appendChild(genreItem);
     }
   });
