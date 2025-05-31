@@ -30,7 +30,17 @@ fetch('recipes.json')
 
       grouped[genre].forEach(recipe => {
         const item = document.createElement('li');
-        item.innerHTML = `<a href="#${recipe.id}">${recipe.title}</a>`;
+        const anchor = document.createElement('a');
+        anchor.href = `#${recipe.id}`;
+        anchor.textContent = recipe.title;
+        anchor.addEventListener('click', e => {
+          e.preventDefault();
+          const target = document.getElementById(recipe.id);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+        item.appendChild(anchor);
         subList.appendChild(item);
 
         const section = document.createElement('section');
@@ -50,5 +60,15 @@ fetch('recipes.json')
       genreLi.appendChild(genreButton);
       genreLi.appendChild(subList);
       toc.appendChild(genreLi);
+    }
+
+    // ページ読み込み後にハッシュがあればジャンプ
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }, 500);
+      }
     }
   });
