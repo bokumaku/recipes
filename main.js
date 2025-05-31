@@ -15,12 +15,12 @@ fetch('recipes.json')
       const genreLi = document.createElement('li');
       const genreButton = document.createElement('button');
       genreButton.className = 'genre-toggle';
-      genreButton.setAttribute('aria-expanded', 'false');
+      genreButton.setAttribute('aria-expanded', 'true');
       genreButton.innerText = genre;
 
       const subList = document.createElement('ul');
       subList.className = 'genre-list';
-      subList.style.display = 'none';
+      subList.style.display = 'flex';
 
       genreButton.addEventListener('click', () => {
         const expanded = genreButton.getAttribute('aria-expanded') === 'true';
